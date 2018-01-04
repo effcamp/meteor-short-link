@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Link = () => {
+const Link = (props) => {
   return (
     <div>
-      <p>Link</p>
+      <h1>Your Links</h1>
+      <button onClick={() => props.history.push('/')}>Logout</button>
     </div>
   );
 };
