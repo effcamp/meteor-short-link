@@ -14,12 +14,16 @@ export default class Signup extends Component {
     const password = this.refs.password.value.trim();
 
     Accounts.createUser({ email, password }, (err) => {
-      console.log('Signup callback', err);
+      if (err) {
+        this.setState(() => ({
+          error: err.reason
+        }));
+      } else {
+        this.setState(() => ({
+          error: ''
+        }));
+      }
     });
-
-    // this.setState(() => {
-    //   error: 'Something went wrong.';
-    // });
   };
 
   render() {

@@ -51,14 +51,12 @@ const App = () => {
           />
           <Route
             path="/signup"
-            component={Signup}
             render={() =>
               Meteor.userId() ? <Redirect to="/links" /> : <Signup />
             }
           />
           <Route
             path="/links"
-            component={Link}
             render={() => {
               return !Meteor.userId() ? <Redirect to="/" /> : <Link />;
             }}
