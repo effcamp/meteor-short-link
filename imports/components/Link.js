@@ -5,6 +5,7 @@ const Link = (props) => {
   onLogout = () => {
     Accounts.logout();
   };
+
   return (
     <div>
       <h1>Your Links</h1>
