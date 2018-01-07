@@ -28,11 +28,6 @@ const App = () => {
     }
   });
 
-  Tracker.autorun(() => {
-    const links = Links.find().fetch();
-    console.log(links);
-  });
-
   const onEnterPublicPage = () => {
     if (Meteor.userId()) {
       history.replace('links');
