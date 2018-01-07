@@ -9,6 +9,7 @@ import NotFound from './NotFound';
 import Login from './Login';
 // import Dashboard from './Dashboard';
 const history = createHistory();
+import { Links } from '../api/links';
 
 const unauthPages = ['/', '/signup'];
 const authPages = ['/links'];
@@ -25,6 +26,11 @@ const App = () => {
     } else if (isAuthPage && !isAuth) {
       history.replace('/');
     }
+  });
+
+  Tracker.autorun(() => {
+    const links = Links.find().fetch();
+    console.log(links);
   });
 
   const onEnterPublicPage = () => {
