@@ -1,5 +1,6 @@
 import React from 'react';
 import { Accounts } from 'meteor/accounts-base';
+import PropTypes from 'prop-types';
 
 const Header = (props) => {
   onLogout = () => {
@@ -11,6 +12,10 @@ const Header = (props) => {
       <button onClick={this.onLogout}>Logout</button>
     </div>
   );
+};
+
+Header.propTypes = {
+  title: PropTypes.string.isRequired
 };
 
 export default Header;
