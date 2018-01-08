@@ -1,4 +1,5 @@
 import React from 'react';
+import { Accounts } from 'meteor/accounts-base';
 
 const Header = (props) => {
   onLogout = () => {
