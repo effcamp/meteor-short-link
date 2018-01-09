@@ -3,11 +3,15 @@ import PropTypes from 'prop-types';
 import Clipboard from 'clipboard';
 
 export class LinksListItem extends Component {
+  state = {
+    copy: 'copy'
+  };
   componentDidMount() {
     this.clipboard = new Clipboard(this.refs.copy);
     this.clipboard
       .on('success', () => {
-        alert('it worked!');
+        this.setState(() => ({ copy: 'copied' }));
+        setTimeout(() => this.setState(() => ({ copy: 'copy' })), 1000);
       })
       .on('error', () => {
         alert('not working!');
@@ -23,7 +27,7 @@ export class LinksListItem extends Component {
         <p>Original: {this.props.url}</p>
         <p>ShortLnk: {this.props.shortUrl}</p>
         <button ref="copy" data-clipboard-text={this.props.shortUrl}>
-          Copy
+          {this.state.copy}
         </button>
       </div>
     );
