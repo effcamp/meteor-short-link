@@ -3,6 +3,8 @@ import { Tracker } from 'meteor/tracker';
 import { Meteor } from 'meteor/meteor';
 import { Links } from '../api/links';
 
+import LinksListItem from './LinksListItem';
+
 export class LinksList extends Component {
   state = {
     links: []
@@ -24,9 +26,15 @@ export class LinksList extends Component {
   render() {
     return (
       <div>
-        <p className="links">Links List</p>
+        <p>Links List</p>
         <div>
-          {this.state.links.map((link) => <p key={link._id}>{link.url}</p>)}
+          {this.state.links.map((link) => (
+            <LinksListItem
+              key={link._id}
+              shortUrl={Meteor.absoluteUrl(link._id)}
+              {...link}
+            />
+          ))}
         </div>
       </div>
     );
