@@ -37,6 +37,7 @@ Meteor.methods({
       lastVisitedAt: undefined
     });
   },
+
   'links.setVisibility'(_id, visible) {
     if (!this.userId) {
       throw new Meteor.Error('not-authorized');
@@ -61,7 +62,6 @@ Meteor.methods({
         min: 1
       }
     }).validate({ _id });
-
     Links.update(
       { _id },
       {

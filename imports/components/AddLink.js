@@ -39,6 +39,8 @@ class AddLink extends React.Component {
           contentLabel="Add Link"
           ariaHideApp={false}
           onRequestClose={this.handleModalClose}
+          className="modal"
+          // overlayClassName="modal-overlay"
         >
           <h1>Add Link</h1>
           {this.state.error && <p>{this.state.error}</p>}
