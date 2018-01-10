@@ -6,7 +6,8 @@ import Header from './Header';
 export default () => (
   <div>
     <Header title="Your Links" />
-    <LinksList />
+    {/* <LinksListFilters /> */}
     <AddLink />
+    <LinksList />
   </div>
 );

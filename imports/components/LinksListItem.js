@@ -28,6 +28,15 @@ export class LinksListItem extends Component {
         <p>Original: {this.props.url}</p>
         <p>ShortLnk: {this.props.shortUrl}</p>
         <p>{this.props.visible.toString()}</p>
+        <p>
+          {this.props.visitedCount === 1
+            ? `${this.props.visitedCount} visit`
+            : `${this.props.visitedCount} visits`}{' '}
+          {this.props.lastVisitedAt && `(visited ${this.props.lastVisitedAt})`}
+        </p>
+        <a href={this.props.shortUrl} target="_blank">
+          Visit
+        </a>
         <button ref="copy" data-clipboard-text={this.props.shortUrl}>
           {this.state.copy}
         </button>
@@ -52,7 +61,9 @@ LinksListItem.propTypes = {
   url: PropTypes.string.isRequired,
   shortUrl: PropTypes.string.isRequired,
   userId: PropTypes.string.isRequired,
-  visible: PropTypes.bool.isRequired
+  visible: PropTypes.bool.isRequired,
+  visitedCount: PropTypes.number.isRequired,
+  lastVisitedAt: PropTypes.string
 };
 
 export default LinksListItem;
