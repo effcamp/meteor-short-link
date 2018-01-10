@@ -34,13 +34,22 @@ export class LinksListItem extends Component {
             : `${this.props.visitedCount} visits`}{' '}
           {this.props.lastVisitedAt && `(visited ${this.props.lastVisitedAt})`}
         </p>
-        <a href={this.props.shortUrl} target="_blank">
+        <a
+          href={this.props.shortUrl}
+          target="_blank"
+          className="btn btn--pill btn--link"
+        >
           Visit
         </a>
-        <button ref="copy" data-clipboard-text={this.props.shortUrl}>
+        <button
+          ref="copy"
+          data-clipboard-text={this.props.shortUrl}
+          className="btn btn--pill"
+        >
           {this.state.copy}
         </button>
         <button
+          className="btn btn--pill"
           onClick={() =>
             Meteor.call(
               'links.setVisibility',

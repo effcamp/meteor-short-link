@@ -46,7 +46,7 @@ class Login extends React.Component {
               name="password"
               placeholder="Password"
             />
-            <button>Login</button>
+            <button className="btn">Login</button>
           </form>
           <Link to="/signup">Don't have an account?</Link>
         </div>

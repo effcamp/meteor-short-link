@@ -15,6 +15,10 @@ h1 {
   margin-bottom: $space;
 }
 
+p {
+  margin-bottom: $space;
+}
+
 a {
   color: black;
 }
@@ -24,7 +28,7 @@ input[type='email'],
 input[type='password'] {
   font-size: $base-font-size;
   margin-bottom: $space;
-  padding: 0.8rem;
+  padding: $input-spacing;
   border: 1px solid $input-border;
 }
 

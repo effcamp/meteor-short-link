@@ -52,7 +52,7 @@ export default class Signup extends Component {
               name="password"
               placeholder="Password"
             />
-            <button>Create account</button>
+            <button className="btn">Create account</button>
           </form>
 
           <Link to="/">Already have an account?</Link>
