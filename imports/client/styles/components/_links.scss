@@ -1,0 +1,17 @@
+.links {
+  background: $link-bg;
+  border: 1px solid $link-border;
+  margin-bottom: $space;
+  padding: $space;
+
+  &__message {
+    color: $link-text-color;
+  }
+
+  &__status {
+    color: $link-text-color;
+    font-style: italic;
+    text-align: center;
+    margin: 0;
+  }
+}

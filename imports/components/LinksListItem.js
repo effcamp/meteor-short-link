@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Clipboard from 'clipboard';
 import { Meteor } from 'meteor/meteor';
+import moment from 'moment';
 
 export class LinksListItem extends Component {
   state = {
@@ -24,15 +25,15 @@ export class LinksListItem extends Component {
 
   render() {
     return (
-      <div>
-        <p>Original: {this.props.url}</p>
-        <p>ShortLnk: {this.props.shortUrl}</p>
-        <p>{this.props.visible.toString()}</p>
-        <p>
+      <div className="links">
+        <h2>{this.props.url}</h2>
+        <p className="links__message">{this.props.shortUrl}</p>
+        <p className="links__message">
           {this.props.visitedCount === 1
             ? `${this.props.visitedCount} visit`
             : `${this.props.visitedCount} visits`}{' '}
-          {this.props.lastVisitedAt && `(visited ${this.props.lastVisitedAt})`}
+          {this.props.lastVisitedAt &&
+            `(visited ${moment(this.props.lastVisitedAt).fromNow()})`}
         </p>
         <a
           href={this.props.shortUrl}
@@ -72,7 +73,7 @@ LinksListItem.propTypes = {
   userId: PropTypes.string.isRequired,
   visible: PropTypes.bool.isRequired,
   visitedCount: PropTypes.number.isRequired,
-  lastVisitedAt: PropTypes.string
+  lastVisitedAt: PropTypes.number
 };
 
 export default LinksListItem;

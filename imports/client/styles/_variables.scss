@@ -1,9 +1,11 @@
 // Colors
 $grey: #dddddd;
+$light-grey: #f9f9f9;
 $darkpurple: #5b4671;
 
 // Spacing
 $space: 1.4rem;
+$max-width: 50rem;
 
 //Font sizes
 $base-font-size: 1.6rem;
@@ -21,3 +23,8 @@ $color-button-bg: $darkpurple;
 $color-button: white;
 $color-btn-secondary-bg: #f9f9f9;
 $color-btn-secondary: $grey;
+
+// Links
+$link-bg: $light-grey;
+$link-border: darken($link-bg, 8%);
+$link-text-color: #777777;

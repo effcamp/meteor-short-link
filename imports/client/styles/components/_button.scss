@@ -19,10 +19,18 @@
     border: 1px solid $darkpurple;
     color: $darkpurple;
     padding: 0.3rem 0.8rem;
+    margin: 0 ($space / 2) 0 0;
   }
   &--secondary {
     background: $color-btn-secondary-bg;
     border: 1px solid $grey;
     color: $color-btn-secondary;
+  }
+  &--link-text {
+    background: none;
+    padding: 0;
+    margin: 0;
+    text-decoration: underline;
+    text-transform: none;
   }
 }

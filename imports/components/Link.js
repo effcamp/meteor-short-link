@@ -7,7 +7,9 @@ export default () => (
   <div>
     <Header title="Your Links" />
     {/* <LinksListFilters /> */}
-    <AddLink />
-    <LinksList />
+    <div className="container">
+      <AddLink />
+      <LinksList />
+    </div>
   </div>
 );

@@ -2,7 +2,6 @@ import { Mongo } from 'meteor/mongo';
 import { Meteor } from 'meteor/meteor';
 import SimpleSchema from 'simpl-schema';
 import shortid from 'shortid';
-import moment from 'moment';
 
 export const Links = new Mongo.Collection('links');
 
@@ -66,7 +65,7 @@ Meteor.methods({
       { _id },
       {
         $set: {
-          lastVisitedAt: moment().fromNow()
+          lastVisitedAt: new Date().getTime()
         },
         $inc: {
           visitedCount: 1

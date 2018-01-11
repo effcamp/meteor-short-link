@@ -4,6 +4,7 @@ import { Meteor } from 'meteor/meteor';
 import { Links } from '../api/links';
 import { Session } from 'meteor/session';
 
+import FlipMove from 'react-flip-move';
 import LinksListItem from './LinksListItem';
 
 export class LinksList extends Component {
@@ -38,8 +39,9 @@ export class LinksList extends Component {
   render() {
     return (
       <div>
-        <label>
+        <label className="checkbox">
           <input
+            className="checkbox__box"
             type="checkbox"
             defaultChecked={this.state.visible}
             onChange={this.handleCheck}
@@ -47,15 +49,22 @@ export class LinksList extends Component {
           Show hidden links
         </label>
 
-        <p>Links List</p>
         <div>
-          {this.state.links.map((link) => (
-            <LinksListItem
-              key={link._id}
-              shortUrl={Meteor.absoluteUrl(link._id)}
-              {...link}
-            />
-          ))}
+          <FlipMove maintainContainerHeight={true}>
+            {this.state.links.length === 0 ? (
+              <div className="links">
+                <p className="links__status">No links found!</p>
+              </div>
+            ) : (
+              this.state.links.map((link) => (
+                <LinksListItem
+                  key={link._id}
+                  shortUrl={Meteor.absoluteUrl(link._id)}
+                  {...link}
+                />
+              ))
+            )}
+          </FlipMove>
         </div>
       </div>
     );

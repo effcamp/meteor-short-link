@@ -1,0 +1,16 @@
+.header {
+  background-color: $darkpurple;
+  color: white;
+
+  &__content {
+    margin: 0 auto;
+    max-width: $max-width;
+    display: flex;
+    justify-content: space-between;
+    padding: $space;
+  }
+
+  &__title {
+    margin: 0;
+  }
+}
