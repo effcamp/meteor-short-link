@@ -51,7 +51,7 @@ class AddLink extends React.Component {
           <form onSubmit={this.onSubmit} className="boxed-view__form">
             <input
               type="text"
-              placeholder="url"
+              placeholder="http://example.com"
               autoFocus
               value={this.state.url}
               onChange={(e) => this.onChange(e)}
